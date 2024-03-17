@@ -10,6 +10,5 @@ for row in range(board.shape[0]):
         board[row][col] = color
     
 cv2.imshow("", board)
-# cv2.imshow("title",my_image_2)
 cv2.waitKey()
 cv2.imwrite("result.jpg", board)
