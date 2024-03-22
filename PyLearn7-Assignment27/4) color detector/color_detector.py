@@ -24,9 +24,9 @@ while True:
     
     if b > 0.7 * (box.shape[0] * box.shape[1]):
         # print("black")
-        color = "[Black]"
+        color = "[black]"
     elif g > 0.7 * (box.shape[0] * box.shape[1]):
-        color = "[Gray]"
+        color = "[gray]"
     elif w > 0.7 * (box.shape[0] * box.shape[1]):
         color = "[white]"
     else:
@@ -35,7 +35,7 @@ while True:
     cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
             cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
     
-    cv2.imshow("resule", frame)
+    cv2.imshow("B&W Color Detector", frame)
     if cv2.waitKey(25) & 0xFF == ord('q'):
         break
 
