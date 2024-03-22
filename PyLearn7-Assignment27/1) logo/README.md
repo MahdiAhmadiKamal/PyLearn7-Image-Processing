@@ -2,7 +2,7 @@
 
 A black and white bat logo is made from an image of a real bat.
 
-<img src="pics\logo.jpg" width="500" height="300">
+<img src="pics\image1.jpg" width="1254.375" height="375">
 
 ---
 ## Python
