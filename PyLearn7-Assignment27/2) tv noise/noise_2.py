@@ -3,7 +3,7 @@ import numpy as np
 import imageio
 
 
-image = cv2.imread("image2.png")
+image = cv2.imread("pics\image2.png")
 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 rows = image.shape[0]
