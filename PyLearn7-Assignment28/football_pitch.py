@@ -26,4 +26,4 @@ cv2.line(my_image, (350, 25), (350, 475), 255, 5)
 
 cv2.imshow("result", my_image)
 cv2.waitKey()
-cv2.imwrite("output/football_pitch.jpg", my_image)
+cv2.imwrite("output/football pitch.jpg", my_image)

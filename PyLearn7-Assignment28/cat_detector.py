@@ -19,3 +19,4 @@ cv2.putText(image, "number of cats: " + str(count), (20, 70),
             cv2.FONT_HERSHEY_SIMPLEX, 1.5, 0, 2)
 cv2.imshow("result", image)
 cv2.waitKey()
+cv2.imwrite("output/cat detector output.jpg", image)
