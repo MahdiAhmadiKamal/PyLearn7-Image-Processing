@@ -34,20 +34,15 @@ def sticker_glasses_lips(image):
                             zip_sticker[i][j] = image[yy+i, xx+j]
                         
             image[yy:yy+hh, xx:xx+ww] = zip_sticker
-            # print(lips)
-            
-            # cv2.rectangle(iqmage, [xx, yy], [xx + ww, yy + hh], [0, 0, 0], 4)
+           
             if len(eye) == 2:
                 xl, yl, wl, hl = eye[0]
-                # print(eye[0])
-                
+               
                 xr, yr, wr, hr = eye[1]
-                # print(eye[1])
-                # cv2.rectangle(image, [x, y], [x+w, y+h], [0, 0, 0], 4)
+                
                 sticker_w = w
                 sticker_h = int(1.3*hl)
-                # print(st_w)
-                # print(st_h)
+                
                 glasses_sticker = cv2.resize(glasses_sticker, [sticker_w, sticker_h])
                 for i in range(sticker_h):
                     for j in range(sticker_w):
