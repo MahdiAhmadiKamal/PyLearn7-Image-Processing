@@ -1,6 +1,16 @@
 import cv2
 import keyboard
 
+def mirror_filter(frame):
+    frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    h, w = frame_gray.shape
+    # print(frame_gray.shape)
+    for i in range(h):
+        for j in range(w):
+            if j > w//2:
+                frame_gray[i, j] = frame_gray[i, (j-2*(j-w//2)+1)]
+    
+    return frame_gray
 
 def sticker_glasses_lips(image):
     frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
