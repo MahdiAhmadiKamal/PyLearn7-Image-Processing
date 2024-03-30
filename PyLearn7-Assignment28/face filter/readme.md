@@ -28,12 +28,12 @@ By holding the "2" key on the keyboard:
 ### 3. pixelized face
 By holding the "3" key on the keyboard:
 
-<img src="output\capture3.png" width="571.4" height="457">
+<img src="output/capture3.png" width="571.4" height="457">
 
 ### 4. mirror filter
 By holding the "4" key on the keyboard:
 
-<img src="output\capture4.png" width="571.4" height="457">
+<img src="output/capture4.png" width="571.4" height="457">
 
 ## Python
 This program is written using [Python](https://www.python.org/) language and [OpenCV](https://opencv.org/), whick is a library of programming functions for real-time computer vision, image processing, and machine learning.
