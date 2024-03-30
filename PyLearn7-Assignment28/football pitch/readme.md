@@ -1,6 +1,6 @@
 
-# Cat Detector 😸🐱😻
-A simple cat face detector project using opencv in python
+# Football Pitch
+A simple football pitch using opencv in python
 
 ## How to Install
 Run following command:
@@ -11,11 +11,11 @@ pip install -r requirements.txt
 ## How to Run
 Execute this command in terminal:
 ```
-python cat_detector.py
+python football_pitch.py
 ```
 
 ## Result
-<img src="output\cat detector output.jpg" width="1076.9" height="725.6">
+<img src="output\football pitch.jpg" width="700" height="500">
 
 ## Python
 This program is written using [Python](https://www.python.org/) language and [OpenCV](https://opencv.org/), whick is a library of programming functions for real-time computer vision, image processing, and machine learning.
