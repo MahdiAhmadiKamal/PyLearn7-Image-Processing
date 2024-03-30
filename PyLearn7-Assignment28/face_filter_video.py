@@ -13,19 +13,18 @@ def mirror_filter(frame):
     
     return frame
 
-
 def sticker_glasses_lips(image):
     frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_detector.detectMultiScale(frame_gray)
     # eye = eyes_detector.detectMultiScale(frame_gray)
     glasses_sticker = cv2.imread("input\glasses55.png")
-    zip_sticker = cv2.imread("input\lips1.png")
+    zip_sticker = cv2.imread("input\zip1.png")
     # print(eyes)
     try:
         for face in faces:
             x, y, w, h = face
             
-            eye = eyes_detector.detectMultiScale(frame_gray)
+            eye = eyes_detector.detectMultiScale(frame_gray, 1.3)
             lips = lips_detector.detectMultiScale(frame_gray, 1.5, 30)
             xx, yy, ww, hh = lips[0]
             zip_sticker = cv2.resize(zip_sticker, [ww, hh])
@@ -37,12 +36,9 @@ def sticker_glasses_lips(image):
                         
             image[yy:yy+hh, xx:xx+ww] = zip_sticker
             # print(lips)
-            
             # cv2.rectangle(image, [xx, yy], [xx + ww, yy + hh], [0, 0, 0], 4)
-        
             xl, yl, wl, hl = eye[0]
             # print(eye[0])
-                
             xr, yr, wr, hr = eye[1]
             # print(eye[1])
             # cv2.rectangle(image, [x, y], [x+w, y+h], [0, 0, 0], 4)
@@ -81,16 +77,16 @@ def pixelized_face(image):
 def sticker_face(image):
     frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     faces = face_detector.detectMultiScale(frame_gray)
-    image_sticker = cv2.imread("input\mask3.png")
+    image_sticker = cv2.imread("input\emoji.png")
     for face in faces:
-        x, y, w, h = face 
-
+        x, y, w, h = face
+        # cv2.rectangle(image, [x, y], [x+w, y+h], [0, 0, 0], 4)
         sticker = cv2.resize(image_sticker, [w, h])
 
         for i in range(w):
             for j in range(h):
                 if sticker[i][j][0] == 0 and sticker[i][j][1] == 0 and sticker[i][j][2] == 0:
-                    sticker[i][j] = image[y+i, x+j] 
+                    sticker[i][j] = image[y+i, x+j]
 
         image[y:y+h, x:x+w] = sticker
 
@@ -130,7 +126,5 @@ while True:
     
     cv2.imshow("result", frame)
     
-    
     if cv2.waitKey(25) & 0xFF == ord('q'):
         break
-
