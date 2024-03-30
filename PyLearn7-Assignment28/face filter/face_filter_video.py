@@ -18,7 +18,7 @@ def sticker_glasses_lips(image):
     faces = face_detector.detectMultiScale(frame_gray)
     # eye = eyes_detector.detectMultiScale(frame_gray)
     glasses_sticker = cv2.imread("input\glasses55.png")
-    zip_sticker = cv2.imread("input\zip1.png")
+    zip_sticker = cv2.imread("input\lips2.png")
     # print(eyes)
     try:
         for face in faces:
@@ -121,7 +121,7 @@ while True:
             cv2.FONT_HERSHEY_SIMPLEX, 0.7, 255, 2)
     cv2.putText(frame, "pixelized face: 3", (10, 440), 
             cv2.FONT_HERSHEY_SIMPLEX, 0.7, 255, 2)
-    cv2.putText(frame, "mirror_filter: 4", (10, 465), 
+    cv2.putText(frame, "mirror filter: 4", (10, 465), 
             cv2.FONT_HERSHEY_SIMPLEX, 0.7, 255, 2)
     
     cv2.imshow("result", frame)
