@@ -8,3 +8,6 @@ image_brad = cv2.imread("input/Leonardo.jpg")
 
 image_leo = cv2.cvtColor(image_leo, cv2.COLOR_BGR2GRAY)
 image_brad = cv2.cvtColor(image_brad, cv2.COLOR_BGR2GRAY)
+
+image_leo = image_leo.astype(np.float32)
+image_brad = image_brad.astype(np.float32)
