@@ -1,5 +1,5 @@
-# Photo to Sketch Conversion
-Using opencv in python, this program can convert any photo to sketch.
+# Appearance of the Secret Text
+Using opencv in python, this program can subtract two images from each other to make the secret text appear.
 
 ## How to Install
 Run following command:
@@ -10,13 +10,12 @@ pip install -r requirements.txt
 ## How to Run
 execute this command in terminal:
 ```
-python photo_to_sketch.py
+python secret_text.py
 ```
 
 ## Result
-The following images show a photo before and after conversion:
 
-![output](input/readme_photo.jpg)
+![output](input/readme.jpg)
 
 ## Python
 This program is written using [Python](https://www.python.org/) language and [OpenCV](https://opencv.org/), whick is a library of programming functions for real-time computer vision, image processing, and machine learning.
