@@ -8,7 +8,7 @@ def noise_reducer(images_folder):
     images = []
     for image_path in images_path:
         image = cv2.imread(images_folder + "/" + image_path)
-        image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+        # image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
         image = image.astype(np.float32)
         images.append(image)
 
