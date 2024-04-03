@@ -2,9 +2,9 @@ import cv2
 import numpy as np
 
 
-image_1 = cv2.imread("input/d1.bmp")
-image_2 = cv2.imread("input/d2.bmp")
+image_1 = cv2.imread("input/image 1.jpg")
+image_2 = cv2.imread("input/image 2.jpg")
 
-result = image_1 - image_2
+result = cv2.subtract(image_2, image_1)
 
-cv2.imwrite("output/d.jpg", result)
+cv2.imwrite("output/result.jpg", result)
