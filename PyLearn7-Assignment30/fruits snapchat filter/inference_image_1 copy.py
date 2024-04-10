@@ -32,6 +32,11 @@ def zoom_effect (file_path, landmark):
             print("* * *")
             print(organ_landmarks)
             print("* * *")
+        if landmark == "left eye":
+            for i in [52, 55, 56, 53, 59, 58, 61, 68, 67, 71, 63, 64]:
+                organ_landmarks.append(pred[i])
+            organ_landmarks = np.array(organ_landmarks, dtype=int)
+
 
         x, y, w, h = cv2.boundingRect(organ_landmarks)
         mask = np.zeros(image.shape, dtype=np.uint8)
