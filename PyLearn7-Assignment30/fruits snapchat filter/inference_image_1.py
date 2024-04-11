@@ -6,16 +6,16 @@ import time
 from TFLiteFaceDetector import UltraLightFaceDetecion
 from TFLiteFaceAlignment import CoordinateAlignmentModel
 
-
+# apple = cv2.imread("input/apple2.jpg")
 def zoom_effect (file_path, landmark):
-    
+
     fd = UltraLightFaceDetecion("weights/RFB-320.tflite", conf_threshold=0.88)
     fa = CoordinateAlignmentModel("weights/coor_2d106.tflite")
 
     image = cv2.imread(file_path)
     apple = cv2.imread("input/apple2.jpg")
     # apple = apple.astype(np.float32)
-    print(apple)
+    # print(apple)
     color = (125, 255, 125)
 
     start_time = time.perf_counter()
@@ -60,16 +60,17 @@ def zoom_effect (file_path, landmark):
         hh, ww, _ = result_big.shape
         
         hhh, www, _ = apple.shape
-        lip_loc = [int(hhh//1.7), int(www//2.6)]
-        left_eye_loc = [int(hhh//1.5), int(www//2)]
+        lip_loc = [int(hhh//1.7), int(www//2.65)]
+        left_eye_loc = [int(hhh//2.3), int(www//2.8)]
+        right_eye_loc = [int(hhh//2.3), int(www//1.9)]
         # apple = apple.astype(np.uint8)
         if landmark == "lips":
-            
             for i in range(hh):
                 for j in range(ww):
                     if result_big[i][j][0] == 0 and result_big[i][j][1] == 0 and result_big[i][j][2] == 0:
                         result_big[i][j] = apple[lip_loc[0]+i, lip_loc[1]+j]
             apple[lip_loc[0]:lip_loc[0] + hh, lip_loc[1]:lip_loc[1] + ww] = result_big
+            # apple1 = cv2.imread("output/output apple2.jpg")
                             
         if landmark == "left eye":
             for i in range(hh):
@@ -77,6 +78,15 @@ def zoom_effect (file_path, landmark):
                     if result_big[i][j][0] == 0 and result_big[i][j][1] == 0 and result_big[i][j][2] == 0:
                         result_big[i][j] = apple[left_eye_loc[0]+i, left_eye_loc[1]+j]
             apple[left_eye_loc[0]:left_eye_loc[0] + hh, left_eye_loc[1]:left_eye_loc[1] + ww] = result_big
+            # cv2.imwrite("output/output apple3.jpg", apple1)
+        # apple1 = cv2.imread("output/output apple2.jpg")
+
+        if landmark == "right eye":
+            for i in range(hh):
+                for j in range(ww):
+                    if result_big[i][j][0] == 0 and result_big[i][j][1] == 0 and result_big[i][j][2] == 0:
+                        result_big[i][j] = apple[right_eye_loc[0]+i, right_eye_loc[1]+j]
+            apple[right_eye_loc[0]:right_eye_loc[0] + hh, right_eye_loc[1]:right_eye_loc[1] + ww] = result_big
         
         
         # apple[lip_loc[0]:lip_loc[0] + hh, lip_loc[1]:lip_loc[1] + ww] = result_big
@@ -87,9 +97,11 @@ def zoom_effect (file_path, landmark):
     cv2.imshow("result", result_big)
     cv2.waitKey()
     cv2.imwrite("output/" + landmark + ".jpg", result_big)
-    cv2.imwrite("output/output apple2.jpg", apple)
+    cv2.imwrite("input/apple2.jpg", apple)
+    
     return result_big
+    
 
 zoom_effect("input\image22.jpg", "lips")
 zoom_effect("input\image22.jpg", "left eye")
-# zoom_effect("input\image22.jpg", "right eye")
+zoom_effect("input\image22.jpg", "right eye")
