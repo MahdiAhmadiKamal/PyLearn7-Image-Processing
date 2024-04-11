@@ -41,22 +41,23 @@ for pred in fa.get_landmarks(image, boxes):
 
 
     x, y, w, h = cv2.boundingRect(lips_landmarks)
+   
     mask = np.zeros(image.shape, dtype=np.uint8)
     cv2.drawContours(mask, [lips_landmarks], -1, (255, 255, 255), -1)
     mask = mask // 255
     
     lips = image * mask
     lips = lips [y:y+h, x:x+w]
-    hh, ww, _ = lips.shape
+    h_l, w_l, _ = lips.shape
     
 
-    for i in range(hh):
-        for j in range(ww):
+    for i in range(h_l):
+        for j in range(w_l):
             if lips[i][j][0] == 0 and lips[i][j][1] == 0 and lips[i][j][2] == 0:
                 lips[i][j] = image[y+i, x+j]
 
     lips_rotated = cv2.rotate(lips, 1)
-    image[y:y + hh, x:x + ww] = lips_rotated
+    image[y:y + h_l, x:x + w_l] = lips_rotated
 
     
 
