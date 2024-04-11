@@ -13,6 +13,9 @@ def zoom_effect (file_path, landmark):
     fa = CoordinateAlignmentModel("weights/coor_2d106.tflite")
 
     image = cv2.imread(file_path)
+    apple = cv2.imread("input/apple2.jpg")
+    # apple = apple.astype(np.float32)
+    print(apple)
     color = (125, 255, 125)
 
     start_time = time.perf_counter()
@@ -20,6 +23,7 @@ def zoom_effect (file_path, landmark):
     boxes, scores = fd.inference(image)
 
     for pred in fa.get_landmarks(image, boxes):
+        
         # for i, p in enumerate(np.round(pred).astype(np.int32)):
         #     cv2.circle(image, tuple(p), 2, color, -1, cv2.LINE_AA)
         #     cv2.putText(image, str(i), tuple(p), cv2.FONT_HERSHEY_SIMPLEX, 0.25, (0, 0, 0))
@@ -52,16 +56,40 @@ def zoom_effect (file_path, landmark):
         result = image * mask
         result = result [y:y+h, x:x+w]
 
-        result_big = cv2.resize(result, (0, 0), fx=4, fy=4)
-
-
+        result_big = cv2.resize(result, (0, 0), fx=6, fy=6)
+        hh, ww, _ = result_big.shape
+        
+        hhh, www, _ = apple.shape
+        lip_loc = [int(hhh//1.7), int(www//2.6)]
+        left_eye_loc = [int(hhh//1.5), int(www//2)]
+        # apple = apple.astype(np.uint8)
+        if landmark == "lips":
+            
+            for i in range(hh):
+                for j in range(ww):
+                    if result_big[i][j][0] == 0 and result_big[i][j][1] == 0 and result_big[i][j][2] == 0:
+                        result_big[i][j] = apple[lip_loc[0]+i, lip_loc[1]+j]
+            apple[lip_loc[0]:lip_loc[0] + hh, lip_loc[1]:lip_loc[1] + ww] = result_big
+                            
+        if landmark == "left eye":
+            for i in range(hh):
+                for j in range(ww):
+                    if result_big[i][j][0] == 0 and result_big[i][j][1] == 0 and result_big[i][j][2] == 0:
+                        result_big[i][j] = apple[left_eye_loc[0]+i, left_eye_loc[1]+j]
+            apple[left_eye_loc[0]:left_eye_loc[0] + hh, left_eye_loc[1]:left_eye_loc[1] + ww] = result_big
+        
+        
+        # apple[lip_loc[0]:lip_loc[0] + hh, lip_loc[1]:lip_loc[1] + ww] = result_big
+        
+    
     print(time.perf_counter() - start_time)
 
     cv2.imshow("result", result_big)
     cv2.waitKey()
     cv2.imwrite("output/" + landmark + ".jpg", result_big)
+    cv2.imwrite("output/output apple2.jpg", apple)
     return result_big
 
-zoom_effect("input\image2.jpg", "lips")
-zoom_effect("input\image2.jpg", "left eye")
-zoom_effect("input\image2.jpg", "right eye")
+zoom_effect("input\image22.jpg", "lips")
+zoom_effect("input\image22.jpg", "left eye")
+# zoom_effect("input\image22.jpg", "right eye")
