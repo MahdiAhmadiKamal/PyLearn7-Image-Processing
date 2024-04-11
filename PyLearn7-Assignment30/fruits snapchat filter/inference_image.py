@@ -12,6 +12,7 @@ fd = UltraLightFaceDetecion("weights/RFB-320.tflite", conf_threshold=0.88)
 fa = CoordinateAlignmentModel("weights/coor_2d106.tflite")
 
 image = cv2.imread("input\image2.jpg")
+
 color = (125, 255, 125)
 
 start_time = time.perf_counter()
