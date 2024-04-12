@@ -2,7 +2,7 @@
 ## 1. fruits snapchat filter
 This program places the eyes and mouth of a person's image on a fruit's.
 
-<img src="pics/1.jpg" width="3029" height="656">
+<img src="pics/1.jpg" width="1514.5" height="328">
 
 ## 2. eyes and lips rotation
 In order to fix an image, this program rotates the eyes and lips of that image.
@@ -17,7 +17,7 @@ Face alignment is the task of identifying the geometric structure of faces in di
 ## 4. eyes and lips magnifying filter
 This program magnifies the eyes and lips of the face image.
 
-<img src="pics/4.jpg" width="1371" height="901">
+<img src="pics/4.jpg" width="685" height="450">
 
 ## How to Install
 Run following command:
