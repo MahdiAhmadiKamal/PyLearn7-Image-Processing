@@ -62,9 +62,9 @@ def zoom_effect (file_path):
             for i in range(hh):
                 for j in range(ww):
                     if result_big[i][j][0] == 0 and result_big[i][j][1] == 0 and result_big[i][j][2] == 0:
-                        result_big[i][j] = image[y+i, x+j]
-        
-            image[y:y + hh, x:x + ww] = result_big
+                        result_big[i][j] = image[y-hh//4+i, int(x-ww//3.9)+j]
+    
+            image[y-hh//4:y-hh//4 + hh, int(x-ww//3.9):int(x-ww//3.9) + ww] = result_big
         # if landmark == "lips":
         #     for i in range(hh):
         #         for j in range(ww):
@@ -79,7 +79,7 @@ def zoom_effect (file_path):
     
     print(time.perf_counter() - start_time)
 
-    cv2.imshow("result", result_big)
+    # cv2.imshow("result", result_big)
     cv2.waitKey()
     # cv2.imwrite("output/" + landmark + ".jpg", result_big)
     cv2.imwrite("output/result.jpg", image)
