@@ -2,7 +2,7 @@
 ## 1. fruits snapchat filter
 This program places the eyes and mouth of a person's image on a fruit's.
 
-<img src="pics/1.jpg" width="1514.5" height="328">
+<img src="pics/1.jpg" width="928" height="326.5">
 
 ## 2. eyes and lips rotation
 In order to fix an image, this program rotates the eyes and lips of that image.
