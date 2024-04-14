@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import cv2
 
 
-image = cv2.imread("input/2-black-white-secrets.jpg", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread("input/image 1.jpg", cv2.IMREAD_GRAYSCALE)
 histogram = []
 rows, cols = image.shape
 # print(image.shape)
