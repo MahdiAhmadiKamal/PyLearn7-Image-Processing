@@ -16,7 +16,7 @@ python foreground_focus.py
 
 ## Result
 
-<img src="input\flower.jpg" width="953.85" height="529.23">
+<img src="input\flower.jpg" width="826.7" height="458.7">
 
 
 ## Python
