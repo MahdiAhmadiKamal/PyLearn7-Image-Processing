@@ -9,6 +9,10 @@ result = np.zeros((rows, cols), dtype=np.uint8)
 kernel = np.array([[-1, -1, -1],
                    [-1, 8, -1],
                    [-1, -1, -1]])
+
+# kernel = np.array([[-1, 0, 1],
+#                    [-2, 0, 2],
+#                    [-1, 0, 1]])
           
 for i in range(1, rows-1):
     for j in range(1, cols-1):
@@ -16,4 +20,4 @@ for i in range(1, rows-1):
         average = np.abs(np.sum(kernel * region))
         result[i, j] = average
 
-cv2.imwrite("output/lion_output.jpg", result)
+cv2.imwrite("output/lion_output.png", result)
