@@ -18,8 +18,8 @@ def noise_reduction(image, dim):
 
     return result
 
-img = cv2.imread("input/board.tif", cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("input/xray_noisy.png", cv2.IMREAD_GRAYSCALE)
 
 result = noise_reduction(img, 15)
-cv2.imwrite("output/board_15x15.png", result)
+cv2.imwrite("output/xray_noisy_15x15.png", result)
 
