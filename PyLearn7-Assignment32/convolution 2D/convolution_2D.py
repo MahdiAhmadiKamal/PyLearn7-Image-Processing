@@ -25,21 +25,16 @@ kernel4 = np.array([[0  ,  0 ,  0],
                    [0  ,  0 ,  0]])
 
 # 5. My filter
-kernel5 = np.array([[1  ,  1 ,  1],
-                   [0  ,  1 ,  1],
-                   [0  ,  0 ,  1]])
-
-# 6. My filter
-kernel6 = np.array([[1  ,  0 ,  0],
+kernel5 = np.array([[1  ,  0 ,  0],
                    [0  ,  1 ,  0],
                    [0  ,  0 ,  1]])
 
-# 7. My filter
-kernel7 = np.array([[0  ,  1 ,  0],
+# 6. My filter
+kernel6 = np.array([[0  ,  1 ,  0],
                    [-1  ,  0 ,  1],
                    [0  ,  -1 ,  0]])
 
-kernels = [kernel1, kernel2, kernel3, kernel4, kernel5, kernel6, kernel7]
+kernels = [kernel1, kernel2, kernel3, kernel4, kernel5, kernel6]
 
 i = 1
 for kernel in kernels:
