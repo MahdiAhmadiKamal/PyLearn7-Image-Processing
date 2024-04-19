@@ -17,22 +17,22 @@ python median_filter.py
 ## Results
 Left images are **inputs** and right ones are **output** images after applying **median filter**.
 
-### 1. kernel 5x5: 0.04
+### 1. After 1 time noise reduction
 <img src="output\result1.jpg" width="512" height="256">
 
-### 2. kernel 5x5: 1.0
+### 2. After 2 times noise reduction
 <img src="output\result22.jpg" width="512" height="247.6">
 
-### 3. kernel 5x5: 5.0
+### 3. After 2 times noise reduction
 <img src="output\result33.jpg" width="512" height="256">
 
-### 4. kernel 3x3: 0.04
+### 4. After 3 times noise reduction
 <img src="output\result444.jpg" width="512" height="192">
 
-### 5. kernel 3x3: 1.0
+### 5. After 4 times noise reduction
 <img src="output\result5555.jpg" width="418" height="218">
 
-### 6. kernel 3x3: 5.0
+### 6. After 2 times noise reduction
 <img src="output\result66.jpg" width="512" height="256">
 
 
