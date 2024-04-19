@@ -20,4 +20,3 @@ for filter in filters:
     result = np.hstack([image, result])
     cv2.imwrite("output/result" + str(i) + ".jpg", result)
     i += 1
-
