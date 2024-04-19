@@ -15,7 +15,7 @@ python convolution_2D.py
 ```
 
 ## Results
-Left images are **input** and right ones are **output** images after applying filter.
+Left images are **inputs** and right ones are **output** images after applying filters.
 ### 1.
 <img src="output\result_1.jpg" width="900" height="337">
 
@@ -33,8 +33,6 @@ Left images are **input** and right ones are **output** images after applying fi
 
 ### 6.
 <img src="output\result_6.jpg" width="900" height="337">
-
-
 
 
 ## Python
