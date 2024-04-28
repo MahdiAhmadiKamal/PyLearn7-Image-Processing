@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-def color2gray(image):
+def pycolor2gray(image):
     
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     rows, cols, _ = image.shape
@@ -20,5 +20,5 @@ def color2gray(image):
 
 
 image = cv2.imread("input/macaw.jpg")
-gray_image = color2gray(image)
+gray_image = pycolor2gray(image)
 cv2.imwrite("output/gray image.jpg", gray_image)
