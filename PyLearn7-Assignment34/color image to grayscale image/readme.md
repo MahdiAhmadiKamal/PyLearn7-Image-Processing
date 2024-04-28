@@ -1,4 +1,4 @@
-# pycolor2gray 🟥🟩🟦➡⬛⬜⬛
+# pycolor2gray 🟥🟩🟦  ➡  ⬛⬜⬛
 **pycolor2gray** is a function written to convert color images to grayscale images.
 
 ## How to Install
