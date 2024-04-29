@@ -16,10 +16,10 @@ python rubik's_cube.py
 ## Result
 
 ### Input
-<img src="input\rubik.png" width="512" height="512">
+<img src="input\rubik.png" width="400" height="400">
 
 ### Output
-<img src="output\result.jpg" width="512" height="512">
+<img src="output\result.jpg" width="400" height="400">
 
 
 ## Python
