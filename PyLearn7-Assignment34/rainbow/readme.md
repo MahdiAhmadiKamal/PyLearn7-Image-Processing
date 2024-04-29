@@ -1,5 +1,5 @@
 # Rainbow 🌈
-Using OpenCV techniques in Python a **rainbow** is drawn.
+Using OpenCV techniques in Python, a **rainbow** is drawn.
 
 ## How to Install
 Run following command:

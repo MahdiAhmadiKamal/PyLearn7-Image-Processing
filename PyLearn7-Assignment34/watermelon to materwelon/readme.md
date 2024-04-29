@@ -1,5 +1,5 @@
 # Watermelon to Materwelon 🍉
-Using OpenCV techniques in Python a **watermelon** is converted to **materwelon**.
+Using OpenCV techniques in Python, a **watermelon** is converted to **materwelon**.
 
 ## How to Install
 Run following command:
