@@ -28,23 +28,22 @@ while True:
     # g = np.count_nonzero((box > 120) & (box < 160))
     # w = np.count_nonzero((box > 150))
     
-    if blue > 0.7 * (box.shape[0] * box.shape[1]):
-        # print("black")
-        color = "[blue]"
-    elif green > 0.7 * (box.shape[0] * box.shape[1]):
-        color = "[green]"
-    elif red > 0.7 * (box.shape[0] * box.shape[1]):
-        color = "[red]"
-    elif red > 0.35 * (box.shape[0] * box.shape[1]) and green > 0.35 * (box.shape[0] * box.shape[1]):
+    if red > 0.45 * (box.shape[0] * box.shape[1]) and green > 0.45 * (box.shape[0] * box.shape[1]):
         color = "[yellow]"
-    elif red > 0.47 * (box.shape[0] * box.shape[1]) and green > 0.23 * (box.shape[0] * box.shape[1]):
+    elif red > 0.6 * (box.shape[0] * box.shape[1]) and green > 0.3 * (box.shape[0] * box.shape[1]):
         color = "[orange]"
-    elif red > 0.29 * (box.shape[0] * box.shape[1]) and blue > 0.41 * (box.shape[0] * box.shape[1]):
+    elif red > 0.37 * (box.shape[0] * box.shape[1]) and blue > 0.53 * (box.shape[0] * box.shape[1]):
         color = "[purple]"
-    elif blue > 0.23 * (box.shape[0] * box.shape[1]) and green > 0.23 * (box.shape[0] * box.shape[1]) and red > 0.23 * (box.shape[0] * box.shape[1]):
+    elif blue > 0.33 * (box.shape[0] * box.shape[1]) and green > 0.33 * (box.shape[0] * box.shape[1]) and red > 0.33 * (box.shape[0] * box.shape[1]):
         color = "[white]" 
     elif blue < 0.03 * (box.shape[0] * box.shape[1]) and green < 0.03 * (box.shape[0] * box.shape[1]) and red < 0.03 * (box.shape[0] * box.shape[1]):
-        color = "[black]"   
+        color = "[black]" 
+    elif blue > 0.9 * (box.shape[0] * box.shape[1]):
+        color = "[blue]"
+    elif green > 0.9 * (box.shape[0] * box.shape[1]):
+        color = "[green]"
+    elif red > 0.9 * (box.shape[0] * box.shape[1]):
+        color = "[red]"  
     else:
         color = ""
 
