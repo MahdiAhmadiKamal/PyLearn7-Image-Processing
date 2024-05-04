@@ -1,5 +1,6 @@
-# pycolor2gray 🟥🟩🟦  &rarr;  ⬛⬜⬛
-**pycolor2gray** is a function written to convert color images to grayscale images.
+# Image Encryption and Decryption 🔐
+**Image Encryption** is the process of converting a normal image into a cipher image using a secret key in such a way that unauthorized users can't access it.
+**Image Decryption** is the process of converting the cipher image into the original image by employing the secret key. Mainly, decryption operation is like encryption operation but applies in reverse order.
 
 ## How to Install
 Run following command:
@@ -10,16 +11,22 @@ pip install -r requirements.txt
 ## How to Run
 Execute this command in terminal:
 ```
-python color_to_grayscale.py
+python encryptor.py
+```
+```
+python decryptor.py
 ```
 
 ## Result
 
 ### Input
-<img src="input\macaw.jpg" width="646.7" height="364">
+<img src="enc_input\Mona Lisa.jpg" width="343.5" height="512">
 
-### Output
-<img src="output\gray image.jpg" width="646.7" height="364">
+### After Encryption
+<img src="enc_output\encrypted_image.bmp" width="343.5" height="512">
+
+### After Decryption
+<img src="dec_output\decrypted_image.jpg" width="343.5" height="512">
 
 
 ## Python
