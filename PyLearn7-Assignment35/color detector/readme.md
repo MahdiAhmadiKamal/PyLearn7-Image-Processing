@@ -15,11 +15,11 @@ python color_detector.py
 
 ## Results
 
-<img src="pics/black1.png" width="500" height="400">
+<img src="pics/black.png" width="500" height="400">
 
-<img src="pics/blue1.png" width="500" height="400">
+<img src="pics/blue.png" width="500" height="400">
 
-<img src="pics/green1.png" width="500" height="400">
+<img src="pics/green.png" width="500" height="400">
 
 <img src="pics/orange1.png" width="500" height="400">
 
