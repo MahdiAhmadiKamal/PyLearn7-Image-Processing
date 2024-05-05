@@ -16,10 +16,6 @@ while True:
     cv2.rectangle(frame, (box_col_1, box_row_1), (box_col_2, box_row_2), 0, 7)
     box = frame[box_col_1:box_col_2, box_row_1:box_row_2]
 
-    blue = np.count_nonzero(box[:, :, 0] > 120)
-    green = np.count_nonzero(box[:, :, 1] > 140)
-    red = np.count_nonzero(box[:, :, 2] > 130)
-
 
     cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
             cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
