@@ -25,6 +25,6 @@ H_new = H_new.astype(np.uint8)
 result = cv2.merge([H_new, S, V])
 result = cv2.cvtColor(result, cv2.COLOR_HSV2BGR)
 
-cv2.imshow("", result)
-cv2.waitKey(0)
+# cv2.imshow("", result)
+# cv2.waitKey(0)
 cv2.imwrite("output/materwelon_hsv.jpg", result)
