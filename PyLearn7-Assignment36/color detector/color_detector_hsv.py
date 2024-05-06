@@ -17,18 +17,27 @@ while True:
     cv2.rectangle(frame, (box_col_1, box_row_1), (box_col_2, box_row_2), 0, 7)
     box = frame_hsv[box_col_1:box_col_2, box_row_1:box_row_2]
     box_area = box.shape[0] * box.shape[1]
-    # H = np.count_nonzero(box[:, :, 0] > 120)
-    S = np.sum(box[:, :, 1] > 50)
-    V = np.sum(box[:, :, 2] > 50)
+    
+    H = box[:, :, 0]
+    S = box[:, :, 1]
+    V = box[:, :, 2]
 
+    S_value = np.sum(S > 50)
+    V_value = np.sum(V > 50)
+    
+    condition_red = (H < 15) | (H > 165) 
+    ext = np.extract(condition_red, H)
+    print(ext)
     # for i in range(box.shape[0]):
     #     for j in range(box.shape[1]):
-            # means: if in at least 80% of pixels, S > 50 & V > 50
-    if S > 0.8 * box_area and V > 0.8 * box_area: 
-        if np.sum( box[:, :, 0] <15 ) > 0.7 * box_area:
+    # means: if in at least 80% of pixels, S_value > 50 & V_value > 50
+    if S_value > 0.8 * box_area and V_value > 0.8 * box_area: 
+        
+        print(np.sum(len(ext)))
+        if np.sum(len(ext)) > 0.7 * box_area:
             color = "[red]" 
-    else:
-        color = ""        
+        else:
+            color = ""
 
     cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
             cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
