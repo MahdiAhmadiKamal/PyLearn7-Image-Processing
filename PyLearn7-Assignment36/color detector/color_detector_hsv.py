@@ -26,14 +26,15 @@ while True:
     V_value = np.sum(V > 40)
     S_value_for_white = np.sum(S < 10)
     V_value_for_white = np.sum(V > 85)
-    V_value_for_black = np.sum(V < 10)
+    S_value_for_black = np.sum(S < 50)
+    V_value_for_black = np.sum(V < 22)
 
-    condition_red = (H < 15) | (H > 165) 
+    condition_red = (H < 10) | (H > 175) 
     condition_green = (45 < H) & (H < 85) 
-    condition_blue = (105 < H) & (H < 135)
+    condition_blue = (87.5 < H) & (H < 118)
     condition_yellow = (22.5 < H) & (H < 32.5)
     condition_orange = (12.5 < H) & (H < 35)
-    condition_purple = (132.5 < H) & (H < 145)
+    condition_purple = (120 < H) & (H < 145)
 
     ext_red = np.extract(condition_red, H)
     ext_green = np.extract(condition_green, H)
@@ -57,23 +58,26 @@ while True:
             color = "[orange]" 
         elif np.sum(len(ext_purple)) > 0.7 * box_area:
             color = "[purple]"  
-        else:
-            color = ""
 
         cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
     
-    # if S_value_for_white > 0.8 * box_area and V_value_for_white > 0.8 * box_area: 
-    #     color = "[white]"  
+    elif S_value_for_white > 0.7 * box_area and V_value_for_white > 0.7 * box_area: 
+        color = "[white]"  
 
-    #     cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
-    #                 cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+        cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
 
-    # if V_value_for_black > 0.8 * box_area: 
-    #     color = "[black]"  
+    elif S_value_for_black > 0.7 * box_area and V_value_for_black > 0.7 * box_area: 
+        color = "[black]"  
         
-    #     cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
-    #                     cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+        cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+        
+    else:
+        color = ""
+        cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
     
     cv2.imshow("Color Detector", frame)
     if cv2.waitKey(25) & 0xFF == ord('q'):
