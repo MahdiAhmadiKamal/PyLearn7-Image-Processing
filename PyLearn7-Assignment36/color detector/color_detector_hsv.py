@@ -27,10 +27,8 @@ while True:
     
     condition_red = (H < 15) | (H > 165) 
     ext = np.extract(condition_red, H)
-    print(ext)
-    # for i in range(box.shape[0]):
-    #     for j in range(box.shape[1]):
-    # means: if in at least 80% of pixels, S_value > 50 & V_value > 50
+
+
     if S_value > 0.8 * box_area and V_value > 0.8 * box_area: 
         
         print(np.sum(len(ext)))
@@ -39,8 +37,8 @@ while True:
         else:
             color = ""
 
-    cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
-            cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
+        cv2.putText(frame, color, (box_col_1 - 5, box_row_1 - 15), 
+                cv2.FONT_HERSHEY_SIMPLEX, 0.8, 0, 2)
     
     cv2.imshow("Color Detector", frame)
     if cv2.waitKey(25) & 0xFF == ord('q'):
