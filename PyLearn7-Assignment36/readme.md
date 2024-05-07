@@ -22,7 +22,7 @@ python materwelon_hsv.py
 
 ### Result
 
-<img src="color detector\pics\green.png" width="400" height="320">
+<img src="color detector\pics\green.jpg" width="400" height="320">
 
 ## How to Run
 Execute this command in terminal:
@@ -64,11 +64,11 @@ pip install -r requirements.txt
 ## Blue Screen Technique 🎬🎥
 ### Input
 
-<img src="blue screen technique\input\SuperMan.jpg" width="819" height="577.6">
+<img src="blue screen technique\input\SuperMan.jpg" width="640" height="451.25">
 
 ### Result
 
-<img src="blue screen technique\output\result2.jpg" width="819" height="577.6">
+<img src="blue screen technique\output\result2.jpg" width="640" height="451.25">
 
 ## How to Run
 Execute this command in terminal:
